@@ -2,7 +2,7 @@
 
 function whoAmI(name, age){
   try {
-  let yearOfBirth = calcYob(age);
+    let yearOfBirth = calcYob(age);
     console.log(`Hi, my name is ${name} and I'm ${age} years old`);
     console.log(`I was born in ${yearOfBirth}`);
   }
@@ -11,9 +11,15 @@ function whoAmI(name, age){
   }
 }
 
-function calcYob(age){
-  if(age <= 0) throw new Error("Age cannot be negative");
+function calcYob(name, age){
+  if(!name || !age){
+    console.error("Arguments not valid");
+  }
+  else if(age <= 0){
+    throw new Error("Age cannot be negative");
+  }
+  
   return 2017 - age;
 }
 
-whoAmI("Eric", 29);
+whoAmI(29);
