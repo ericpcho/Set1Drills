@@ -16,5 +16,30 @@ function beyond(num){
   }
 }
 
+function decode(code){
+  const ourArray = code.split(" ");
+  let dString = "";
+    for(let i=0; i<ourArray.length; i++) {
+      switch(ourArray[i].charAt(0)) {
+        case "a":
+          dString += ourArray[i].charAt(1);
+          break;
+        case "b":
+          dString += ourArray[i].charAt(2);
+          break;
+        case "c":
+          dString += ourArray[i].charAt(3);
+          break;
+        case "d":
+          dString += ourArray[i].charAt(4); 
+          break;
+        default: 
+          dString += " ";
+      }
+    }
+    return dString;
+}
 
-console.log(beyond(-Infinity));
+console.log(decode("craft block argon meter bells brown croon droop"));
+
+
